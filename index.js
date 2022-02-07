@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const message = require('./models/message');
 const { v4: uuidv4 } = require('uuid');
 var bodyParser = require('body-parser')
+var cors = require('cors')
+
+app.use(cors());
 
 
 mongoose.connect(process.env.MONGODB_PATH)
@@ -48,5 +51,5 @@ app.get('/messages/:messageId', (req, res)=>{
 })
 */
 
-app.listen(3000);
+app.listen(3001);
 console.log('Server on port 3000');
